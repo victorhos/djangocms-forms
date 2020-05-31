@@ -1,13 +1,13 @@
-# -*- coding: utf-8 -*-
 
-from __future__ import unicode_literals
+
+
 
 import re
 
 from django import forms
 from django.contrib.admin.widgets import AdminDateWidget, FilteredSelectMultiple
 from django.core.mail import EmailMultiAlternatives
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.template import TemplateDoesNotExist
 from django.template.defaultfilters import slugify
 from django.template.loader import get_template, render_to_string
@@ -16,7 +16,9 @@ from django.utils.translation import ugettext_lazy as _
 from ipware.ip import get_ip
 from unidecode import unidecode
 
-from .fields import FormBuilderFileField, HoneyPotField, MultipleChoiceAutoCompleteField, ReCaptchaField
+from captcha.fields import ReCaptchaField
+
+from .fields import FormBuilderFileField, HoneyPotField, MultipleChoiceAutoCompleteField
 from .models import Form, FormDefinition, FormField, FormSubmission
 from .utils import int_to_hashid
 from .widgets import DateInput, TelephoneInput, TimeInput
